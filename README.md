@@ -8,3 +8,7 @@ uploading more CS than math solutions.*
 
 ## Currently working on:
 - SICP (in Scheme)
+  - [x] Chapter 1
+  - [ ] Chapter 2
+  - [ ] Chapter 3
+  - [ ] Chapter 4
