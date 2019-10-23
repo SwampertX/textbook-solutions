@@ -9,10 +9,8 @@
 
 # output: set of integers
 def move(nfa_tt, states, letter):
-    print(states) # a tuple
     list_of_tuples = [nfa_tt[i][letter] for i in states if nfa_tt[i][letter]]
     list_of_states = [state for tup in list_of_tuples for state in tup]
-    print(set(list_of_states))
     return set(list_of_states)
 
 # output: set of integers
@@ -32,8 +30,10 @@ def epsilon_closure(nfa_tt, states):
 
 def move_then_epsilon_closure(nfa_tt, states, letter):
     moved = move(nfa_tt, states, letter)
+    ec = epsilon_closure(nfa_tt, moved)
     print("moving {} along {} edge resulted in {}".format(states, letter, moved))
-    return epsilon_closure(nfa_tt, moved)
+    print("taking epsilon closure of {}, we have {}".format(moved, ec))
+    return ec
 
 # nfa_tt is a list of hashmaps from letter + epsilon to state number
 # discipline: epsilon must exist and represented by "epsilon"
@@ -50,7 +50,6 @@ def nfa_dfa(nfa_tt):
     #       add final into dfa states if final not in dfa states
     letters = list(nfa_tt[0].keys())
     letters.remove("epsilon")
-    print(letters)
 
     nfa_states_to_dfa_state = {} # tuple of num to num
     dfa_state_to_nfa_states = [] # list of tuples
@@ -85,6 +84,7 @@ def nfa_dfa(nfa_tt):
             next_dfa_state = nfa_states_to_dfa_state[tuple(sorted(next_nfa_states))]
             dfa_tt_row[letter] = next_dfa_state
         dfa_tt.append(dfa_tt_row)
+    return (dfa_tt, dfa_state_to_nfa_states)
 
 def tt_from_input():
     rows = int(input("Number of rows (states, including zero): "))
