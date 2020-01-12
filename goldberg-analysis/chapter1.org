@@ -1,0 +1,40 @@
+#+TITLE: Chapter 1
+* Exercises 1.1
+1. A: Points on the real line to the left of point 7.
+   B: Points on the real line excluding the segment from -2 to 2 but not
+   including these two points..
+   C: Points 1 and -1.
+2. A: Points on the circle with radius 1 and coordinates $<x,y>$.
+   B: Points below the line $x = y$ (which is the straight line defined by
+   $<0,0>$ and $<1,1>$).
+   C: Points on the line $$ y = 2 - x $$ (which is the straight line defined by
+   $<0,2>$ and $<2,0>$).
+3. a.
+   b. $9 = 3 \times 3$
+   c. 11 is prime
+   d. This number has at least two factors, which is the two natural numbers
+   multiplied together. By definition (a prime factor only has two factors, 1
+   and itself), this number is not a prime.
+4. a. True
+   b. False. $\{3\} \in A$.
+   A has 4 elements.
+* Exercises 1.2
+1. We illustrate using the python code below.
+    #+BEGIN_SRC python
+    import string
+
+    s = set(string.ascii_lowercase)
+    a = set("trivial")
+    a_prime = s.difference(a)
+    b = set("difficult")
+    b_prime = s.difference(b)
+
+    return s.difference(a.union(b)) == a_prime.intersection(b_prime)
+    #+END_SRC
+
+    #+RESULTS:
+    : True
+2. $A \cap B = (\infty,-2] \cap [2,7)$
+3. Trivial
+4. Trivial
+5.

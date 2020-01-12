@@ -1,0 +1,47 @@
+#+TITLE: Chapter 1
+* 1.2 Vector Spaces
+** Notes
+*** Definition
+A vector space (or linear space) $V$ over a field $F$ consists of
+a set
+on which two operations (addition and scalar multiplication) are defined so that
+for all pair x, y in V, there exist a unique x + y in V,
+and for all elements a in F, for every x in V there is a unique ax such that the
+following conditions hold
+1. addition is commutative x + y = y + x
+2. additiion is associative
+3. there exists a 0 element (such that x + 0 = x for all x)
+4. there exists an inverse for every x (such that x + y = 0)
+5. 1x = x
+6. scalar multiplication is associative for all a,b in F and x in V, a(bx) = (ab)x
+7. scalar multiplication is distributive over (vector) addition (a(x+y) = ax + ay)
+8. vector multiplication is distributive over (scalar) addition ((a+b)x = ax + bx)
+*** Examples
+The below are vector spaces:
+- the n-tuple of F is a vector space over F for all positive integer n.
+- Matrices of size mxn is a vector space over F
+- the set F(S,F) of all functions from a nonempty set S to F is a vector field
+  over F.
+  addition: (f + g)(s) = f(s) + g(s)
+  scalar mult: (cf)(s) = c(f(s))
+- the set of all polynomials is a vector space over F from with the coefficients
+  are taken.
+- define sequences as the function from the positive integers into any field F.
+  then V, the set of all sequences in F with finite number of nonzero terms is a
+  vector field over F.
+  addition: {an + bn} = {an} + {bn}
+  scalar mult: t{an} = {t x an}
+** Exercises
+*** Theorem 1.1
+**** Corollary 1
+The vector 0 described in (vector space property 3) is unique.
+Proof:
+Suppose not. then let a and b both be the vector 0.
+then we have a + 0 = a = 0 = b = b + 0.
+by theorem 1.1, then a = b. contradiction.
+**** Corollary 2
+The additive inverse given any vector in the vector space is unique.
+Proof:
+Suppose not. then given x, we have y1 and y2, distinct elements in V where
+x + y1 = x + y2 = 0.
+By commutativity,y1 + x = y2 + x. then by theorem 1.1, y1 = y2. contradiction.
