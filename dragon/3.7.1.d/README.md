@@ -3,6 +3,13 @@
 Input NFA, get the transition table for the DFA,
 with DFA state to NFA states mapping.
 
+Requirements:
+For pretty printing.
+
+```bash
+pip3 install tabulate
+```
+
 Usage:
 
 ```bash
